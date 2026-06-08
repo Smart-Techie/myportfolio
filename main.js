@@ -228,7 +228,7 @@ function renderProfileCard(data) {
     avatarImg.style.display = 'block';
     avatarFallback.style.display = 'none';
   } else {
-    avatarImg.src = 'assets/profile.png';
+    avatarImg.src = 'assets/profile.jpeg';
     avatarImg.style.display = '';
     avatarFallback.style.display = '';
   }
