@@ -489,6 +489,11 @@ apSaveBtn.addEventListener('click', async () => {
 
 // Init on load
 (async () => {
+  // Clear any existing database profile picture once to ensure the new GitHub default displays
+  if (!localStorage.getItem('profile_cleared_v3')) {
+    await dbDel(DB_KEY_PROFILE);
+    localStorage.setItem('profile_cleared_v3', 'true');
+  }
   renderProfileCard(await dbGet(DB_KEY_PROFILE));
   renderResumeCard(await dbGet(DB_KEY_RESUME));
   renderCertsGrid((await dbGet(DB_KEY_CERTS)) || []);
